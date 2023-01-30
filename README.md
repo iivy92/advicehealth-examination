@@ -57,4 +57,10 @@ Use o Docker para subir os containers
 | `model` | `string` | **Obrigatório**. Modelo do veículo |
 | `owner_id` | `integer` | **Obrigatório**. ID do proprietario do veículo |
 
+## Rodando os testes
 
+Para rodar os testes, basta ativar a sua virtualenv e rodar o seguinte comando
+
+```bash
+  python3 -m pytest 
+```
