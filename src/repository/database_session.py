@@ -4,7 +4,7 @@ from src.repository.entities.owner import Owner
 from src.repository.entities.vehicle import Vehicle
 
 
-engine = create_engine(url="postgresql+psycopg2://default:root@localhost:5432/carford", pool_size=3)
+engine = create_engine(url="postgresql+psycopg2://default:root@postgres/carford", pool_size=3)
 
 Owner.__table__.create(bind=engine, checkfirst=True)
 Vehicle.__table__.create(bind=engine, checkfirst=True)
