@@ -6,7 +6,7 @@ class DatabaseRepository():
     def __init__(self, entity) -> None:
         self.db_session = DBSession()
         self.db_entity = entity
-    
+
     def execute(self, query):
         return self.db_session.execute(query)
 

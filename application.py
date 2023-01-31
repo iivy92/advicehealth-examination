@@ -1,12 +1,8 @@
 from flask import Flask
 from flask import jsonify
-
-
 from src.handlers.person import handler_person
 from src.handlers.vehicle import handler_vehicle
 from src.utils.exceptions import InvalidUsage
-from src.utils.authentication import verify_password 
-
 
 
 def create_app():
@@ -14,7 +10,6 @@ def create_app():
     
     app.register_blueprint(handler_person)
     app.register_blueprint(handler_vehicle)
-
 
     @app.errorhandler(InvalidUsage)
     def handle_invalid_usage(error):

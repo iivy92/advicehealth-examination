@@ -1,7 +1,6 @@
 from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 from src.repository.entities.base import BaseOrmEntity
-from sqlalchemy.dialects.postgresql import UUID
 
 
 class Vehicle(BaseOrmEntity):
