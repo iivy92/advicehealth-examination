@@ -3,11 +3,13 @@ from http import HTTPStatus
 from src.models.schemas.vehicle import AssignVehicle
 from src.use_cases.vehicle import VeihicleUseCases
 from src.utils.exceptions import InvalidUsage
+from src.utils.authentication import auth
 
 
 handler_vehicle = Blueprint('vehicle', __name__, url_prefix='/v1/vehicle')
 
 @handler_vehicle.route('/assign', methods=['POST'])
+@auth.login_required
 def assing_vehicle():
     try:
         dto = AssignVehicle().load(request.json)
