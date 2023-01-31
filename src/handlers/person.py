@@ -17,4 +17,14 @@ def create_person():
         raise InvalidUsage(str(e), status_code=HTTPStatus.BAD_REQUEST.value)
 
     return dict(result="Person sucessfully created.")
+
+@handler_person.route('/list-owners', methods=['GET'])
+@auth.login_required
+def get_owners():
+    try:
+        owners = PersonUseCases().get_owners()
+    except Exception as e:
+        raise InvalidUsage(str(e), status_code=HTTPStatus.BAD_REQUEST.value)
+
+    return dict(result=owners)
     

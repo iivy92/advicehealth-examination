@@ -38,6 +38,12 @@ Autenticação do tipo **Basic Auth**, [clique aqui](https://www.invertexto.com/
 
 ## Documentação da API
 
+#### Listar usuarios cadastrados
+
+```http
+  GET /v1/person/list-owners
+```
+
 #### Cadastrar possivel dono de veiculo 
 
 ```http
