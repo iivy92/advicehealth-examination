@@ -10,6 +10,11 @@ class DatabaseRepository():
     def execute(self, query):
         return self.db_session.execute(query)
 
+    def get_all(self):
+        """Return all objects"""
+        get_query = select(self.db_entity)
+        return self.execute(get_query).scalars().fetchall()
+
     def get_vehicles_by_owner_id(self, id: int):
         """Return one object filter by owner.id"""
         get_query = select(self.db_entity)
