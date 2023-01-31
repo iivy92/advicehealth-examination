@@ -31,6 +31,11 @@ Use o Docker para subir os containers
   docker-compose up --build 
 ```
 
+## Autenticação
+
+Autenticação do tipo **Basic Auth**, [clique aqui](https://www.invertexto.com/advicehealth) para obter um usuário e senha
+
+
 ## Documentação da API
 
 #### Cadastrar possivel dono de veiculo 

@@ -1,11 +1,13 @@
+import os
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = HTTPBasicAuth()
 
+
+#TODO: put credentials on .env file
 users = {
-    "john": generate_password_hash("hello"),
-    "susan": generate_password_hash("bye")
+    'advicehealth': generate_password_hash('pwd2023')
 }
 
 @auth.verify_password
