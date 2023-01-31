@@ -3,10 +3,12 @@ from http import HTTPStatus
 from src.models.schemas.person import CreatePerson
 from src.use_cases.person import PersonUseCases
 from src.utils.exceptions import InvalidUsage
+from src.utils.authentication import auth
 
 handler_person = Blueprint('person', __name__, url_prefix='/v1/person')
 
 @handler_person.route('/create', methods=['POST'])
+@auth.login_required
 def create_person():
     try:
         dto = CreatePerson().load(request.json)
