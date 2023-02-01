@@ -30,3 +30,14 @@ def get_owners():
         raise InvalidUsage(str(e), status_code=HTTPStatus.BAD_REQUEST.value)
 
     return dict(result=owners)
+
+
+@handler_person.route('/owner/<string:document_number>', methods=['GET'])
+@auth.login_required
+def get_owner_by_document_number(document_number):
+    try:
+        owners = PersonUseCases().get_owner_by_document_number(document_number)
+    except Exception as e:
+        raise InvalidUsage(str(e), status_code=HTTPStatus.BAD_REQUEST.value)
+
+    return dict(result=owners)
