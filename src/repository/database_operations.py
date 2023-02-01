@@ -21,7 +21,7 @@ class DatabaseRepository():
         return self.execute(get_query.where(self.db_entity.owner_id == id)).scalars().fetchall()
    
     def get_owner_by_document_number(self, document_number: str):
-        """Return one object filter by uuid"""
+        """Return one object filter by owner.document_number"""
         get_query = select(self.db_entity)
         return self.execute(get_query.where(self.db_entity.document_number == document_number)).scalars().fetchall()
     
