@@ -1,4 +1,3 @@
-from http import HTTPStatus
 from src.repository.database_operations import DatabaseRepository
 from src.repository.entities.vehicle import Vehicle
 
@@ -16,5 +15,3 @@ class VeihicleUseCases():
     def check_vehicle_quantity(vehicles):
         if len(vehicles) >= 3:
             raise Exception('It is only possible to assign up to 3 vehicles per person')
-
-

@@ -8,6 +8,7 @@ from src.utils.authentication import auth
 
 handler_vehicle = Blueprint('vehicle', __name__, url_prefix='/v1/vehicle')
 
+
 @handler_vehicle.route('/assign', methods=['POST'])
 @auth.login_required
 def assing_vehicle():
@@ -17,5 +18,3 @@ def assing_vehicle():
         return dict(result="Veihicle sucessfully assigned to owner")
     except Exception as e:
         raise InvalidUsage(str(e), status_code=HTTPStatus.BAD_REQUEST.value)
-
-

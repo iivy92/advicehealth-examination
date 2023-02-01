@@ -1,8 +1,6 @@
-import uuid
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer
 from sqlalchemy.orm.decl_api import DeclarativeMeta
-
 
 
 class Base:

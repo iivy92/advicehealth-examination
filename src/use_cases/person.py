@@ -8,9 +8,13 @@ class PersonUseCases():
 
     def create_person(self, data):
         return self.repository.create(data)
-    
+
     def get_owners(self):
         persons = self.repository.get_all()
+        return self.format_payload(persons)
+    
+    def get_owner_by_document_number(self, document_number):
+        persons = self.repository.get_owner_by_document_number(document_number)
         return self.format_payload(persons)
     
     @staticmethod
