@@ -38,6 +38,16 @@ Autenticação do tipo **Basic Auth**, [clique aqui](https://www.invertexto.com/
 
 ## Documentação da API
 
+#### Buscar dono do veiculo pelo numero do documento
+
+```http
+  GET /v1/person/owner/<document_number>
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `document_number` | `string` | **Obrigatório**. Numero CPF do usuário |
+
 #### Listar usuarios e seus veiculos cadastrados
 
 ```http
